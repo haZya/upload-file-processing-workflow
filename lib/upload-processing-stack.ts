@@ -65,7 +65,17 @@ export class UploadProcessingStack extends Stack {
       ],
     });
 
+    const generatePresignedPostLambda = this.createUploadLambda("GeneratePresignedPostHandler", {
+      entry: "lambda/upload/generate-presigned-post.ts",
+      uploadsTable,
+      uploadRelationsTable,
+      environment: {
+        STAGING_UPLOAD_BUCKET_NAME: stagingUploadBucket.bucketName,
+      },
+    });
+
     uploadsTable.grantReadWriteData(registerUploadLambda);
+    stagingUploadBucket.grantPut(generatePresignedPostLambda);
 
     const s3ObjectCreatedDeliveryDlq = new Queue(this, "S3ObjectCreatedEventBridgeDLQ", {
       retentionPeriod: Duration.days(14),
