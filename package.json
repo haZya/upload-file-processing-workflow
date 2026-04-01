@@ -5,22 +5,29 @@
     "file-processing": "bin/file-processing.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --noEmit",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.14",
-    "@types/node": "22.7.9",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.2.5",
-    "aws-cdk": "2.1031.1",
+    "@types/aws-lambda": "^8.10.161",
+    "@types/jest": "^30.0.0",
+    "@types/node": "25.5.0",
+    "aws-cdk": "2.1115.1",
+    "jest": "^30.3.0",
+    "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
-    "typescript": "~5.6.3"
+    "typescript": "~5.9.3"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.215.0",
-    "constructs": "^10.0.0"
+    "@aws-sdk/client-apigatewaymanagementapi": "^3.1021.0",
+    "@aws-sdk/client-dynamodb": "^3.1021.0",
+    "@aws-sdk/client-s3": "^3.1021.0",
+    "@aws-sdk/lib-dynamodb": "^3.1021.0",
+    "aws-cdk-lib": "2.246.0",
+    "constructs": "^10.6.0",
+    "file-type": "^22.0.0",
+    "sharp": "^0.34.5"
   }
 }
