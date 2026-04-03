@@ -37,8 +37,8 @@ export class StorageStack extends Stack {
             blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
             enforceSSL: true,
             minimumTLSVersion: 1.2,
-            removalPolicy: RemovalPolicy.DESTROY,
-            autoDeleteObjects: true,
+            removalPolicy: RemovalPolicy.DESTROY, // Use RETAIN for prod
+            autoDeleteObjects: true, // Use false for prod
             lifecycleRules: [
                 {
                     abortIncompleteMultipartUploadAfter: Duration.days(1),
