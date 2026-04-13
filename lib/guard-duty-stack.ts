@@ -6,7 +6,7 @@ import { CfnMalwareProtectionPlan } from "aws-cdk-lib/aws-guardduty";
 import { Policy, PolicyStatement, Role, ServicePrincipal } from "aws-cdk-lib/aws-iam";
 
 interface GuardDutyStackProps extends StackProps {
-    stagingUploadBucket: IBucket;
+    readonly stagingUploadBucket: IBucket;
 }
 
 export class GuardDutyStack extends Stack {

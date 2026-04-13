@@ -34,14 +34,14 @@ import {
 import type { Construct } from "constructs";
 
 interface UploadProcessingStackProps extends StackProps {
-  stagingUploadBucket: IBucket;
-  uploadBucket: IBucket;
-  uploadsTable: ITableV2;
-  uploadRelationsTable: ITableV2;
-  webSocket: {
-    connectionsTable: ITableV2;
-    stage: IWebSocketStage;
-    api: IWebSocketApi;
+  readonly stagingUploadBucket: IBucket;
+  readonly uploadBucket: IBucket;
+  readonly uploadsTable: ITableV2;
+  readonly uploadRelationsTable: ITableV2;
+  readonly webSocket: {
+    readonly connectionsTable: ITableV2;
+    readonly stage: IWebSocketStage;
+    readonly api: IWebSocketApi;
   }
 }
 
